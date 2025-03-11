@@ -1,6 +1,6 @@
 {
-  "name": "@ksassnowski/motion-canvas-camera",
-  "author": "Kai Sassnowski",
+  "name": "@blubbers122/motion-canvas-camera",
+  "author": "blubbers122",
   "version": "0.6.0",
   "description": "A camera component for Motion Canvas",
   "main": "lib/index.js",
@@ -14,6 +14,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "format": "pretetier --write \"src/**/*.ts\"",
+    "release": "npm run build && npm version patch && npm publish --verbose --access restricted && git push",
+    "release:minor": "npm run build && npm version minor && npm publish --verbose --access restricted && git push",
+    "release:major": "npm run build && npm version major && npm publish --verbose --access restricted && git push",
     "prepare": "npm run build",
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags"
@@ -23,8 +26,8 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@motion-canvas/2d": "^3.4.0",
-    "@motion-canvas/core": "^3.4.0"
+    "@motion-canvas/2d": "^3.18.0-alpha.0",
+    "@motion-canvas/core": "^3.18.0-alpha.0"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.0.0",

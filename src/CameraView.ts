@@ -1,29 +1,29 @@
 import {
-  Layout,
-  LayoutProps,
-  Line,
-  Node,
-  NodeState,
+	Layout,
+	LayoutProps,
+	Line,
+	Node,
+	NodeState,
 } from "@motion-canvas/2d/lib/components";
 import {
-  computed,
-  initial,
-  signal,
-  vector2Signal,
+	computed,
+	initial,
+	signal,
+	vector2Signal,
 } from "@motion-canvas/2d/lib/decorators";
 import { all, waitFor } from "@motion-canvas/core/lib/flow";
 import { SignalValue, SimpleSignal } from "@motion-canvas/core/lib/signals";
 import { ThreadGenerator } from "@motion-canvas/core/lib/threading";
 import {
-  TimingFunction,
-  easeInOutCubic,
+	TimingFunction,
+	easeInOutCubic
 } from "@motion-canvas/core/lib/tweening";
 import {
-  BBox,
-  PossibleBBox,
-  PossibleVector2,
-  Vector2,
-  Vector2Signal,
+	BBox,
+	PossibleBBox,
+	PossibleVector2,
+	SimpleVector2Signal,
+	Vector2,
 } from "@motion-canvas/core/lib/types";
 
 import { getFromCycled, wrapArray } from "./utils";
@@ -123,7 +123,7 @@ export class CameraView extends Layout {
   public declare readonly baseZoom: SimpleSignal<number, this>;
 
   @vector2Signal("translation")
-  public declare readonly translation: Vector2Signal<this>;
+  public declare readonly translation: SimpleVector2Signal<this>;
 
   @initial(null)
   @signal()
