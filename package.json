@@ -1,7 +1,7 @@
 {
   "name": "@blubbers122/motion-canvas-camera",
   "author": "blubbers122",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "A camera component for Motion Canvas",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
