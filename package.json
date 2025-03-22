@@ -5,6 +5,7 @@
   "description": "A camera component for Motion Canvas",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "type": "module",
   "keywords": [
     "motion-canvas",
     "camera",
@@ -12,7 +13,7 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
+    "build": "rollup -c",
     "release": "npm run build && npm version patch && npm publish --verbose --access restricted && git push",
     "release:minor": "npm run build && npm version minor && npm publish --verbose --access restricted && git push",
     "release:major": "npm run build && npm version major && npm publish --verbose --access restricted && git push",
@@ -24,10 +25,16 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@motion-canvas/2d": "^3.18.0-alpha.0",
-    "@motion-canvas/core": "^3.18.0-alpha.0"
+    "@motion-canvas/2d": "^3.17.2",
+    "@motion-canvas/core": "^3.17.2",
+    "tslib": "^2.8.1"
   },
   "devDependencies": {
-    "typescript": "^4.9.5"
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "rollup": "^4.36.0",
+    "rollup-plugin-dts": "^6.2.1",
+    "rollup-plugin-node-externals": "^8.0.0",
+    "typescript": "^5.8.2"
   }
 }
